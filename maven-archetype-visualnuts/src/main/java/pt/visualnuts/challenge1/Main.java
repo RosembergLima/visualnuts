@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		CheckNumber check = new CheckNumber();
-		IntStream.range(0, 26).forEach(
+		IntStream.range(0, 100).forEach(
 				nbr -> {
 					if(check.isDivisible(3, nbr) && check.isDivisible(5, nbr))
 						System.out.println("Visual Nuts");
