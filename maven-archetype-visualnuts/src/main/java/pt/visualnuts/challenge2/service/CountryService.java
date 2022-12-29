@@ -1,6 +1,5 @@
 package pt.visualnuts.challenge2.service;
 
-import java.awt.RenderingHints.Key;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -9,8 +8,6 @@ import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Optional;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -55,9 +52,9 @@ public class CountryService {
 
 		Long key = Collections.max(finalMap.entrySet(), Map.Entry.comparingByValue()).getValue();
 
-		Set<String> duplicateCompanies = allLanguages.stream()
+		Set<String> commonLanguages = allLanguages.stream()
 				.filter(language -> Collections.frequency(allLanguages, language) == key).collect(Collectors.toSet());
-		return duplicateCompanies.toArray(new String[0]);
+		return commonLanguages.toArray(new String[0]);
 	}
 
 }
